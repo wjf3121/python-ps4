@@ -77,7 +77,7 @@ def _send_recv_msg(host, broadcast, msg, receive=True):
         return [ None, host ]
     try:
         sock.bind((UDP_IP, UDP_PORT))
-        sock.settimeout(3.0)
+        sock.settimeout(6.0)
     except OSError as error:
         _LOGGER.error('failed to bind socket %s:%s, %s', UDP_IP, UDP_PORT, error)
         sock.close()
